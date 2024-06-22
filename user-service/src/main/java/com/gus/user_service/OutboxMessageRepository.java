@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface OutboxMessageRepository extends JpaRepository<OutboxMessage, Long> {
-    List<OutboxMessage> findAllByStatus(Status status);
+    List<OutboxMessage> findFirst10ByStatusOrderByCreatedAtAsc(Status status);
 }

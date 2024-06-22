@@ -18,6 +18,6 @@ public class OutboxMessage {
     @Enumerated(EnumType.STRING)
     private Status status;
     private String destination;
-    private Integer tentatives;
+    private Integer tentatives = 0;
     private String headers;
 }

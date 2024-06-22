@@ -1,0 +1,34 @@
+server:
+  port: 8081
+
+spring:
+  application.name: notification-service
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbitmq
+    password: secret
+    listener:
+      simple:
+        default-requeue-rejected: false
+#        retry:
+#          enabled: true
+#          max-attempts: 3
+#          initial-interval: 5s
+#          multiplier: 2
+
+  mail:
+    host: ${MAIL_HOST}
+    port: 587
+    username: ${MAIL_USER}
+    password: ${MAIL_PASS}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+app:
+  notificationEmail: ${NOTIFICATION_EMAIL}
